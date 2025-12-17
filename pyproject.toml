@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ecommerce-analytical-mcp-server"
+version = "0.1.0"
+description = "E-commerce analytics MCP server with PostgreSQL"
+authors = [{ name = "Masoud Ahangary", email = "soosma.67@gmail.com" }]
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "fastmcp>=2.14.1",
+    "psycopg[binary]>=3.2.0",
+    "pydantic>=2.0.0",
+    "pydantic-settings>=2.12.0",
+    "python-dotenv>=1.2.1",
+    "sqlalchemy>=2.0.45",
+    "matplotlib>=3.9.0",
+]
+
+[project.scripts]
+ecom-mcp = "app.main:main"
+
+[tool.setuptools]
+packages = ["app"]
+
+
+[tool.setuptools.package-dir]
+app = "app"
+
+[tool.ruff]
+line-length = 100
